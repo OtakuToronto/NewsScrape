@@ -9,8 +9,8 @@ var cheerio = require("cheerio");
 var app = express();
 
 // Database configuration
-var databaseUrl = "scraper";
-var collections = ["scrapedData"];
+var databaseUrl = "walrus";
+var collections = ["article"];
 
 // Hook mongojs configuration to the db variable
 var db = mongojs(databaseUrl, collections);
@@ -40,12 +40,12 @@ app.get("/all", function(req, res) {
 
 // Scrape data from one site and place it into the mongodb db
 app.get("/scrape", function(req, res) {
-  // Make a request via axios for the news section of `ycombinator`
-  axios.get("https://news.ycombinator.com/").then(function(response) {
+  // Make a request via axios for the news section of `ycombinator` https://news.ycombinator.com/
+  axios.get("https://thewalrus.ca/category/society/environment/").then(function(response) {
     // Load the html body from axios into cheerio
     var $ = cheerio.load(response.data);
     // For each element with a "title" class
-    $(".title").each(function(i, element) {
+    $("h3").each(function(i, element) {
       // i = 0
       // i = 1;
       // Save the text and href of each link enclosed in the current element
