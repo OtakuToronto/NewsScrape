@@ -11,19 +11,19 @@ const ArticleSchema = new Schema({ //Constructor for scapped article object.
       required: true,
       unique: true
   },
-  summary: {
-      type: String,
-      required: true,
-      unique: true
-  },
-  timestamp: {
-      type: Date, 
-      default: Date.now
-  },
-  saved: {
-      type: Boolean,
-      default: false
-  },
+  // summary: {  // these are currently not connected to scrape request would like to add as well as photos.
+  //     type: String,
+  //     required: true,
+  //     unique: true
+  // },
+  // timestamp: {
+  //     type: Date, 
+  //     default: Date.now
+  // },
+  // saved: {
+  //     type: Boolean,
+  //     default: false
+  // },
   note: [
       {
           type: Schema.Types.ObjectId,
@@ -31,7 +31,5 @@ const ArticleSchema = new Schema({ //Constructor for scapped article object.
       }
   ]
 });
-
-
 
 module.exports = Article; 
