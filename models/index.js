@@ -1,4 +1,4 @@
-const Article = require('./Articles');
+const Article = require('./articles');
 const Note = require('./Note')
 
 module.exports = {
