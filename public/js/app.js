@@ -1,7 +1,7 @@
 $(document).ready(() => {
     // declare functions
     const scrapeArticles = ()=>{
-        $.get('/scrape')
+        $.get('/scrape/')
         .then((data)=>{
             $('body').html(data);
         });
