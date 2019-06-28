@@ -48,10 +48,11 @@ module.exports = (app)=>{
             
             $('article').each(function(i, element) {
                 const result = {};
-                const title = $(element).children("section").children('h3').text()
+
+                const title = $(element).children("section").children('h3').text();
                 const link = $(element).children("section").children('h3').children('a').attr("href");
                 const img = $(element).children("figure").children('a').children('img').attr("src");
-                const summary = $(element).children("section").children('p').text()
+                const summary = $(element).children("section").children('p').text();
 
                 result.title = title;
                 result.link = link;
