@@ -37,7 +37,6 @@ const ArticleSchema = new Schema({ //Constructor for scapped article object.
   ]
 });
 
-// Creates the model from schema
 const Article = mongoose.model('Articles', ArticleSchema);
 
 module.exports = Article; 
